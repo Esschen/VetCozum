@@ -1,0 +1,252 @@
+* {
+	padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+	background:url(img/background.png);
+	background-color: lightgray;
+}
+
+/* "Mobile first" - 1 by 5 grid */
+.grid {
+	display: grid;
+    grid-row-gap: 10px;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto auto auto;
+	grid-template-areas:
+	"header"
+	"menu"
+	"content"
+	"sidebar"
+	"footer";
+}
+
+/* screen width larger than 768px (Tablet) - 2 by 4 grid */
+@media screen and (min-width: 768px) and (max-width:1024px)
+{
+.grid {
+	display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+	grid-template-columns: auto 200px;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas:
+	"header header"
+	"menu menu"
+	"content sidebar"
+	"footer footer";
+}
+}
+
+/* screen width larger than 1024px (Laptop) - 2 (4) by 4 grid */
+@media screen and (min-width: 1025px)
+{
+.grid {
+	display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+	grid-template-columns: 1fr 720px 200px 1fr;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas:
+	". header header ."
+	". menu menu ."
+	". content sidebar ."
+	". footer footer .";
+}
+}
+
+#fullname {
+	font-weight: bold;
+}
+
+p, h1, h2, h3, h4, h5, form {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+p.sidebar {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+li {
+	margin-left: 20px;
+	margin-right: 5px;
+}
+
+#iframe {
+	margin-left: 5px;
+}
+
+.header {
+	grid-area: header;
+	text-decoration: none;
+	border: 0;
+}
+
+a, a:visited {
+  	text-decoration: none;
+  	color: #800000;
+  	font-weight: bold;
+}
+
+a:hover {
+	color: white;
+	background-color: blue;
+}
+
+.menu {
+	grid-area: menu;
+	background-color: white;
+	text-align: center;
+}
+
+.content {
+	grid-area: content;
+	background-color: #87AAB9;
+	word-wrap: break-word;
+	text-align: justify;
+	/*word-break: break-all;*/
+}
+
+.sidebar {
+	grid-area: sidebar;
+	background-color: #EEC5B0;
+}
+
+.footer {
+	grid-area: footer;
+	background-color: #A9B7C0;
+	text-align: justify;
+}
+
+.logo {
+	text-shadow: 1px 1px gray;
+	font-family: Arial Narrow, Arial, sans-serif;;
+	font-size: larger;
+	font-weight: bold;
+}
+
+.spacer {
+	font-size: 5px;
+}
+
+.container {
+  	position: relative;
+  	max-width: 800px; /* Maximum width */
+  	margin: 0 auto; /* Center it */
+  	height: 200px;
+	width: 300px;
+  	border: 5px solid #3d70b2;
+  	border-radius:25px;
+  	padding: 10px;
+  	margin: 10px;
+	box-shadow: 10px 10px 5px #99D3DF;
+	background:url(img/small.jpg);
+	background-repeat: no-repeat;
+}
+/* source https://www.w3schools.com/howto/howto_css_image_transparent.asp */
+/* adjusted to my website and added by myself */
+
+.largecontainer {
+  	position: relative;
+  	max-width: 800px; /* Maximum width */
+  	margin: 0 auto; /* Center it */
+  	height: 200px;
+	width: 300px;
+  	border: 5px solid #3d70b2;
+  	border-radius:25px;
+  	padding: 10px;
+  	margin: 10px;
+	box-shadow: 10px 10px 5px #99D3DF;
+	background:url(img/large.png);
+	background-repeat: no-repeat;
+}
+
+.contentcontainer {
+  	position: absolute; /* Position the background text */
+  	bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  	background: rgb(0, 0, 0); /* Fallback color */
+  	background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  	color: #f1f1f1; /* Grey text */
+  	padding: 3px; /* Some padding */
+}
+
+#contentsmall{
+  	background: rgb(0, 0, 0); /* Fallback color */
+  	background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  	color: #f1f1f1; /* Grey text */
+  	padding: 3px; /* Some padding */
+}
+
+.smallmail {
+  	font-size: 90%;
+  	margin-left: 5px;
+}
+
+#cattext{
+	position: relative;
+	margin: 10px;
+  	height: 380px;
+	width: 280px;
+  	border-radius:5px 35px;
+  	padding: 10px;
+  	background: #E7D7DD;
+	background-repeat: no-repeat;
+	background-position: left top;
+	text-align: none;
+}
+
+#catpic {
+	position: relative;
+  	margin: 10px;
+  	height: 200px;
+	width: 200px;
+  	padding: 2px;
+	background-position: left top;
+	border: 15px solid transparent;
+  	border-image: url(img/colorpaws.jpg) 20% round;
+  	text-align: none;
+}
+
+#monkeytext {
+	position: relative;
+	margin: 10px;
+  	height: 370px;
+	width: 280px;
+  	border-radius:5px 35px;
+  	padding: 10px;
+  	background: #E7D7DD;
+	background-repeat: no-repeat;
+	background-position: left top;
+	text-align: none;
+}
+
+#monkeypic {
+	position: relative;
+  	margin: 10px;
+  	height: 200px;
+	width: 200px;
+  	padding: 2px;
+	background-position: left top;
+	border: 15px solid transparent;
+  	border-image: url(img/colorpaws.jpg) 20% round;
+  	text-align: none;
+}
+
+/* source https://www.w3schools.com/howto/howto_css_image_center.asp  */
+
+#symbol {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 50%;
+}
+
+/* #noeffect {
+text-decoration: none;
+background-color:none;
+} */
+
+/* 20181208 */
